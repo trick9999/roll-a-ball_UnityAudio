@@ -7,8 +7,12 @@ public class PlayerController : MonoBehaviour
 	public GUIText countText;
 	public GUIText winText;
 	public GUIText timeText;
+	public AudioSource _1up_;
+	public AudioSource _coin_;
+
 	private int count;
 	private int numberOfGameObjects;
+
 
 	void Start()
 	{
@@ -36,6 +40,13 @@ public class PlayerController : MonoBehaviour
 			other.gameObject.SetActive(false);
 			count = count + 1;
 			SetCountText();
+			//this.GetComponent<AudioSource> ().Play ();
+			if (count >= numberOfGameObjects) {
+				_1up_.Play ();
+			} else {
+				_coin_.Play ();
+			}
+
 		}
 	}		
 
