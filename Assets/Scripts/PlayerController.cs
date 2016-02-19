@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
 		if(other.gameObject.tag == "PickUp")
 		{
 			other.gameObject.SetActive(false);
+			//other.gameObject.transform.localPosition = new Vector3(Random.Range(-5.0f, 5.0f), 0.5f, Random.Range(-5.0f, 5.0f)); 
 			count = count + 1;
 			SetCountText();
 			//this.GetComponent<AudioSource> ().Play ();
